@@ -6,21 +6,21 @@ import Card from 'react-bootstrap/Card'
 const ApartmentsProfile = () => {
   return (
     <>
-      <div className="">
+      <div className="mt-5">
         <div className="container infoAp-location-price border">
           <div className="row d-flex">
-            <div className="row title-plus-location d-block">
+            <div className="row title-plus-location d-block mt-3">
               <div className="col-sm mx-4">
                 <h5>Luxurious house</h5>
               </div>
-              <div className="col-sm">
+              <div className="col-sm p-0">
                 <div className="main-location">
                   <div className="ico-location"></div>
                   Tavira (Santa Maria e Santiago), Tavira, Faro
                 </div>
               </div>
             </div>
-            <div className="row d-block top-pricing">
+            <div className="row d-block top-pricing mt-3">
               <div className="col-sm total-price">
                 <h5>445 000 €</h5>
               </div>
@@ -29,7 +29,7 @@ const ApartmentsProfile = () => {
               </div>
             </div>
           </div>
-          <div className="container p-0">
+          <div className="container p-0 mt-2">
             <div className="row d-flex">
               <div className="col-9 carousel-box border">
                 <Carousel>
