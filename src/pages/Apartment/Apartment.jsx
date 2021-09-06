@@ -8,15 +8,15 @@ const ApartmentsProfile = () => {
     <>
       <div className="mt-5">
         <div className="container infoAp-location-price border">
-          <div className="row d-flex">
+          <div className="row d-flex top-content-location-price-responsive">
             <div className="row title-plus-location d-block mt-3">
-              <div className="col-sm mx-4">
+              <div className="col-sm title-responsive">
                 <h5>Luxurious house</h5>
               </div>
               <div className="col-sm p-0">
                 <div className="main-location">
                   <div className="ico-location"></div>
-                  Tavira (Santa Maria e Santiago), Tavira, Faro
+                  <p>Tavira (Santa Maria e Santiago), Tavira, Faro</p>
                 </div>
               </div>
             </div>
@@ -29,7 +29,7 @@ const ApartmentsProfile = () => {
               </div>
             </div>
           </div>
-          <div className="container p-0 mt-2">
+          <div className="container p-0 mt-2 content-carousel-contact-responsive">
             <div className="row d-flex">
               <div className="col-9 carousel-box border">
                 <Carousel>
@@ -111,8 +111,8 @@ const ApartmentsProfile = () => {
               <li className="item img-ap-5"></li>
             </ul>
           </div>
-          <h2>Properties</h2>
-          <div className="properties">
+          <h2 className="title-properties-responsive">Properties</h2>
+          <div className="properties properties-responsive">
             <div className="prop-1">
               <div>Useful area (m²): 315 m²</div>
               <div>Enterprise: no</div>
@@ -129,7 +129,7 @@ const ApartmentsProfile = () => {
             </div>
           </div>
           <hr />
-          <section>
+          <section className="section-responsive">
             <h2>
               Description
             </h2>
@@ -144,8 +144,8 @@ const ApartmentsProfile = () => {
             </div>
           </section>
           <hr />
-          <div>
-            <ul className="d-flex list-more-Aps">
+          <div className="responsive-list-cards">
+            <ul className="list-more-Aps">
               <li>
                 <Card style={{ width: '18rem' }}>
                   <Card.Img variant="top" src="https://img.theculturetrip.com/wp-content/uploads/2016/01/799px-Typical_Paris_Apartment1.jpg" />
