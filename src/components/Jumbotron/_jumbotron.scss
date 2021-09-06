@@ -1,8 +1,18 @@
 
 
 .jumbotron {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%), url(../../assets/images/homepage-jumbotron.jpg);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%), url(../../assets/images/homepage-jumbotron-3.jpg);
   background-size: cover;
+  background-position: left;
+  // above is the part added for the curved line
+  width:105%;
+  height:40%;
+  left:-3%;
+  position:absolute;
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
 }
 
 .bg-cover {
@@ -18,11 +28,15 @@
 .search-container {
   background-color: white;
   border-radius: 30px;
-  width: 60%;
+  width: 50%;
   opacity: 0.7;
 }
 
 .search-input {
   border: none;
-  width: 200%;
+  width: 150%;
+}
+
+input:focus{
+  outline: none;
 }
