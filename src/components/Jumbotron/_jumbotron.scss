@@ -6,5 +6,18 @@
 }
 
 .bg-cover {
-  height: 100vh;
+  // height: 75vh;
+  height: 50rem;
+}
+
+.jumbotron-catchphrase {
+  color: $color-1;
+}
+
+.vertical-center {
+  min-height: 20%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 20vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
 }

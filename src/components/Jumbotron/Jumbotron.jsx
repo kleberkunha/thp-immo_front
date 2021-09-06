@@ -3,10 +3,11 @@ import React from 'react';
 const Jumbotron = () => {
   return (
     <div className="home-header jumbotron bg-cover">
-      <section className="hero mx-4">
-          <p className="title my-4">Le meilleur site pour toutes vos annonces immobilières</p>
-          <p className="subtitle my-4">C'est gratuit, et c'est facile</p>
-          <button className="btn button-primary"></button>
+      <section className="hero jumbotron-catchphrase py-5">
+        <div className="vertical-center row">
+          <h1 className="py-3 d-flex justify-content-center">Le meilleur site pour toutes vos annonces immobilières</h1>
+          <h3 className="py-3 d-flex justify-content-center">C'est gratuit, et c'est facile</h3>
+        </div>
       </section>
     </div>
   );
