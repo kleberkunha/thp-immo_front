@@ -2,6 +2,9 @@
   margin: 0px;
   padding: 0px;
 }
+body{
+  background-color: rgba(228, 225, 225, 0.281);
+}
 /*Top TITLE + PRICE ---- START ----*/
 .title-plus-location{
   width: 80%;
@@ -17,17 +20,26 @@
 .price-m2{
   text-align: right;
 }
+.main-location{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.ico-location{
+  background-image: url("../../assets/images/location.png");
+  background-repeat: none;
+  background-size: contain;
+  width: 35px;
+  height: 35px;
+}
 /*Top TITLE + PRICE ---- END ----*/
 /*#######################################*/
 /*#######################################*/
 /*Content-INFO ---- START ----*/
 .carousel-box{
-  height: 500px;
+  height: 546px;
   overflow: hidden;
   padding: 0;
-}
-.contact-box{
-  height: 600px;
 }
 .carousel-indicators{
   display: none;
