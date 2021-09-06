@@ -1,0 +1,51 @@
+/*Begin Session ---- START ----*/
+.main-begin-session{
+  background-color: #d4d3d3;
+  align-items: center;
+  font-size: 25px;
+  height: 50px;
+}
+.begin-session{
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+.begin-session p{
+  margin: 0;
+}
+/*Begin Session ---- END ----*/
+/*##################################*/
+/*##################################*/
+.main-content-login{
+  height: auto;
+  background-color: #d2d2d350;
+}
+.subContent-login{
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-dark-login{
+  background-color: #1b232e;
+  width: 600px;
+  height: 400px;
+  margin-top: 150px;
+  margin-left: -300px;
+}
+.login-form a{
+  text-align: right;
+  color: white;
+}
+.forgot-password{
+  display: flex;
+  justify-content: flex-end;
+}
+.login-button{
+  width: 100%;
+}
+.login-button:hover{
+  background-color:  rgb(37, 37, 37);
+  color: white;
+}
