@@ -1,9 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from  'pages/Home/index';
-import AdProfile from 'pages/Apartments';
-import './App.css';
-import './pages/Apartments/style/style.scss';
+import Home from  'pages/Home/Home';
+import AdProfile from 'pages/Apartment/Apartment';
 
 function App() {
   return (
@@ -11,9 +9,9 @@ function App() {
         <BrowserRouter>
 
             <Switch>
-              <Route path="/Home" exact component={Home}/>
-              <Route path="/register" />
-              <Route path="/login" />
+              <Route path="/" exact component={Home}/>
+              {/* <Route path="/register" exact component={Register} />
+              <Route path="/login" exact component={Login} /> */}
               <Route path="/ApartmentsProfile" component={AdProfile} />
             </Switch>
         </BrowserRouter>
