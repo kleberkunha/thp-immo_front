@@ -1,0 +1,17 @@
+// @import 'bootstrap/dist/css/bootstrap.min.css';
+@import "./settings";
+
+// PAGES STYLE IMPORT
+
+@import "pages/Home/home";
+@import "pages/About/about";
+@import "pages/Apartment/apartment";
+@import "pages/Login/login";
+@import "pages/Register/register";
+
+
+
+// COMPONENTS STYLE IMPORT
+
+@import "components/Jumbotron/jumbotron";
+@import "components/Navbar/navbar";
