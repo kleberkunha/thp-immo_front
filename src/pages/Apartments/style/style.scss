@@ -1,0 +1,51 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+/*Top TITLE + PRICE ---- START ----*/
+.title-plus-location{
+  width: 80%;
+}
+.top-pricing{
+  margin: 0;
+  padding: 0;
+  width: 20%;
+}
+.total-price{
+  text-align: right;
+}
+.price-m2{
+  text-align: right;
+}
+/*Top TITLE + PRICE ---- END ----*/
+/*#######################################*/
+/*#######################################*/
+/*Content-INFO ---- START ----*/
+.carousel-box{
+  height: 500px;
+  overflow: hidden;
+  padding: 0;
+}
+.contact-box{
+  height: 600px;
+}
+.carousel-indicators{
+  display: none;
+}
+
+/*Carousel*/
+
+.carousel-item img{
+  width: 100%;
+}
+/*Carousel ---- END ----*/
+
+.icoimg{
+  background-image: url("../../../images/icoimg.png");
+  background-size: contain;
+  width: 80px;
+  height: 80px;
+}
+
+
+/*Content-INFO ---- START ----*/
