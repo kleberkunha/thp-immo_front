@@ -43,8 +43,43 @@
 .icoimg{
   background-image: url("../../../images/icoimg.png");
   background-size: contain;
-  width: 80px;
-  height: 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 70px;
+}
+.text-left-contact{
+  font-size: 15px;
+}
+.phone-number-hide{
+  margin-right: 5px;
+  margin-bottom: -2px;
+}
+.show-number{
+  border: 2px solid blue;
+  width: 150px;
+  height: 25px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.left-side-details-contact{
+  display: flex;
+  align-items: center;
+}
+.text-responsible{
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+.form-group label{
+  font-size: 15px;
+  color: rgb(103, 151, 151);
+}
+label{
+  font-size: 15px;
+  color: rgb(103, 151, 151);
 }
 
 
