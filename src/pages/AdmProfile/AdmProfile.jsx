@@ -47,23 +47,19 @@ const AdmProfile = () => {
                   </div>
                 </div>
                 <h3>My itens</h3>
-                <div>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <div className="panel">
-                        <div className="panel-body">
-                          <ApartmentCard />
-                          <ApartmentCard />
-                          <ApartmentCard />
-                        </div>
-                        <div className="panel-body">
-                          <ApartmentCard />
-                          <ApartmentCard />
-                          <ApartmentCard />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="container main-card-list-adm">
+                  <ApartmentCard/>
+                  <ApartmentCard/>
+                  <ApartmentCard/>
+                  <ApartmentCard/>
+                  <ApartmentCard/>
+                  <ApartmentCard/>
+                  <ApartmentCard/>
+                  <ApartmentCard/>
+                  <ApartmentCard/>
+                  <ApartmentCard/>
+                  <ApartmentCard/>
+                  <ApartmentCard/>
                 </div>
               </div>
             </div>

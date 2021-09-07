@@ -69,13 +69,12 @@ const ApartmentsProfile = () => {
             </ul>
           </div>
           <PropertyPresentation />
-          <div className="responsive-list-cards">
-            <ul className="list-more-Aps">
-              <ApartmentCard />
-              <ApartmentCard />
-              <ApartmentCard />
-              <ApartmentCard />
-            </ul>
+          <div className="container main-card-list-profileAp">
+            <ApartmentCard/>
+            <ApartmentCard/>
+            <ApartmentCard/>
+            <ApartmentCard/>
+  
           </div>
         </div>
       </div>

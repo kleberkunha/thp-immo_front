@@ -138,3 +138,8 @@ label{
   color: rgb(103, 151, 151);
 }
 /*Content-INFO ---- START ----*/
+
+.main-card-list-profileAp{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
