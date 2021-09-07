@@ -8,6 +8,9 @@
 @import "pages/Apartment/apartment";
 @import "pages/Login/login";
 @import "pages/Register/register";
+@import "pages/ProfileUser/profileUser.scss";
+@import "pages/Apartment/ComponentsStyle/ImagesCarouselmini/_properties.scss";
+@import "../pages/AdmProfile/AdmProfile.scss";
 
 
 
@@ -18,5 +21,14 @@
 @import "components/Jumbotron/jumbotron";
 @import "components/Navbar/navbar";
 @import "components/CardsApComponent/ImagesMini";
-@import "pages/Apartment/ComponentsStyle/ImagesCarouselmini/_properties.scss";
+@import "components/Footer/footer";
+
+
+
+// COMPONENTS RESPONSIVE STYLE IMPORT
+
+// @import "components/HousingList/housingList";
+
 @import "pages/Apartment/ResponsiveApartmentPage/responsive";
+@import "pages/Login/ResponsiveLogin/loginResponsive.scss";
+@import "pages/ProfileUser/ProfuleUserResponsive/ProfileUserResponsive.scss";
