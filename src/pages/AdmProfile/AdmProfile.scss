@@ -346,13 +346,14 @@ ul.summary-list > li:last-child  {
 .activity-desk .album a:last-child{
   margin-right: 0px;
 }
-
-.panel-body{
-  display: flex;
-}
 .nav-pills{
   display: block;
 }
 .content-profile{
   margin-top: 50px;
+}
+
+.main-card-list-adm{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
