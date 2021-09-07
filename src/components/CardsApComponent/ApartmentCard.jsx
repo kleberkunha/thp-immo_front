@@ -1,16 +1,24 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card'
 
-const ApartmentCard = () => {
+const ApartmentCard = ({listing}) => {
+
+  function truncate (str) {
+    return str.length > 10 ? str.substring(0, 50) + "..." : str;
+}
+
   return (
-    <div>
+    <div className="mx-3">
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="https://img.theculturetrip.com/wp-content/uploads/2016/01/799px-Typical_Paris_Apartment1.jpg" />
+        <Card.Img variant="top" src={listing.photo} />
         <Card.Body>
-          <Card.Title>$ 500.000</Card.Title>
-          <Card.Text>115 m², 1522 EUR/m²</Card.Text>
+          <Card.Title>{listing.title}</Card.Title>
+          <Card.Text>{listing.price} €/semaine</Card.Text>
           <Card.Text>
-            Floor of a T3 villa in a gated community in the urbanization ...
+            {truncate(listing.description)}
+          </Card.Text>
+          <Card.Text>
+            {listing.category}
           </Card.Text>
         </Card.Body>
       </Card>

@@ -2,10 +2,35 @@ import Carousel from 'react-bootstrap/Carousel'
 import ApartmentCard from 'components/CardsApComponent/ApartmentCard';
 import ContactCard from 'components/ContactCard/ContactCard';
 import PropertyPresentation from 'components/PropertyPresentation/PropertyPresentation';
+import Navbar from 'components/Navbar/Navbar';
+import Loading from 'components/Loading/Loading';
+import HousingList from 'components/HousingList/HousingList';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { listingsFetch } from 'services/apiManager';
 
 const ApartmentsProfile = () => {
+
+  const dispatch = useDispatch()
+  const listings = useSelector(state => state.listings)
+
+  const getListings = () => {
+    dispatch(listingsFetch())
+  }
+
+
+  useEffect(() => {
+    getListings();
+  },[]);
+
+
+  let fourListings = [];
+  fourListings.push(listings.listings[0], listings.listings[1], listings.listings[2], listings.listings[3])
+
+
   return (
     <>
+      <Navbar />
       <div className="mt-5">
         <div className="container infoAp-location-price border">
           <div className="row d-flex top-content-location-price-responsive">
@@ -70,11 +95,12 @@ const ApartmentsProfile = () => {
           </div>
           <PropertyPresentation />
           <div className="container main-card-list-profileAp">
-            <ApartmentCard/>
-            <ApartmentCard/>
-            <ApartmentCard/>
-            <ApartmentCard/>
-            <p>FUCKING TEST</p>
+          {
+            listings.listings ?
+              <HousingList data={fourListings} />
+              :
+              <Loading />
+          }
           </div>
         </div>
       </div>

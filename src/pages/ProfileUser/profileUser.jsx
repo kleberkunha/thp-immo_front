@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import Navbar from 'components/Navbar/Navbar';
 
 const ProfileUser = () => {
   return (
-    <div className="background-profileUser">
+    <>
+        <Navbar />
+        <div className="background-profileUser">
         <div className="help-resizing-profileBackground">
             <div className="container emp-profile">
                 <form method="post">
@@ -124,6 +127,7 @@ const ProfileUser = () => {
             </div>
         </div>
     </div>
+    </>
   )
 }
 

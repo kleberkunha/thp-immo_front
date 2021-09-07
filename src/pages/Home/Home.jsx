@@ -19,16 +19,23 @@ const Home = () => {
 
   useEffect(() => {
     getListings();
-  },[])
+  },[]);
+
+
 
   return(
     <>
     <div className="homepage">
       <Navbar />
       <Jumbotron />
-      <HousingList />
+      {
+        listings.listings ?
+
+          <HousingList data={listings.listings} />
+          :
+          <Loading />
+      }
     </div>
-      <Link to="ApartmentsProfile">Go to AdProfile</Link>
 
     </>
   )
