@@ -2,6 +2,9 @@
   margin: 0px;
   padding: 0px;
 }
+body{
+  background-color: rgba(228, 225, 225, 0.281);
+}
 /*Top TITLE + PRICE ---- START ----*/
 .title-plus-location{
   width: 80%;
@@ -17,17 +20,27 @@
 .price-m2{
   text-align: right;
 }
+.main-location{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.ico-location{
+  background-image: url("../../assets/images/location.png");
+  background-repeat: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 35px;
+  height: 35px;
+}
 /*Top TITLE + PRICE ---- END ----*/
 /*#######################################*/
 /*#######################################*/
 /*Content-INFO ---- START ----*/
 .carousel-box{
-  height: 500px;
+  height: 546px;
   overflow: hidden;
   padding: 0;
-}
-.contact-box{
-  height: 600px;
 }
 .carousel-indicators{
   display: none;
@@ -43,9 +56,42 @@
 .icoimg{
   background-image: url("../../assets/images/icoimg.png");
   background-size: contain;
-  width: 80px;
-  height: 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 70px;
 }
-
-
+.text-left-contact{
+  font-size: 15px;
+}
+.phone-number-hide{
+  margin-right: 5px;
+  margin-bottom: -2px;
+}
+.show-number{
+  border: 2px solid blue;
+  width: 150px;
+  height: 25px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.left-side-details-contact{
+  display: flex;
+  align-items: center;
+}
+.text-responsible{
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+.form-group label{
+  font-size: 15px;
+  color: rgb(103, 151, 151);
+}
+label{
+  font-size: 15px;
+  color: rgb(103, 151, 151);
+}
 /*Content-INFO ---- START ----*/
