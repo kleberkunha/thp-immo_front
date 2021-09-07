@@ -73,8 +73,6 @@ const ApartmentsProfile = () => {
             <ApartmentCard/>
             <ApartmentCard/>
             <ApartmentCard/>
-            <ApartmentCard/>
-            <p>FUCKING TEST</p>
           </div>
         </div>
       </div>

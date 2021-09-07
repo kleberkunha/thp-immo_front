@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import ApartmentCard from "components/CardsApComponent/ApartmentCard";
+import './AdmProfileResponsive/AdmProfileResponsive.scss';
 const AdmProfile = () => {
   return (
     <>
@@ -25,20 +26,20 @@ const AdmProfile = () => {
               </div>
               <div className="profile-info col-md-9">
                 <div className="panel">
-                  <div className="bio-graph-info">
+                  <div className="bio-graph-info details-adm">
                     <h1>Details</h1>
-                    <div className="row">
+                    <div className="row align-details">
                       <div className="bio-row">
-                          <p><span>First Name </span>: Camila</p>
+                          <p>First Name : Camila</p>
                       </div>
                       <div className="bio-row">
-                          <p><span>Last Name </span>: Smith</p>
+                          <p>Last Name : Smith</p>
                       </div>
                       <div className="bio-row">
-                          <p><span>Country </span>: Australia</p>
+                          <p>Country : Australia</p>
                       </div>
                       <div className="bio-row">
-                          <p><span>Email </span>: jsmith@flatlab.com</p>
+                          <p>Email : jsmith@flatlab.com</p>
                       </div>
                       <div className="bio-row">
                           <p> (33) 03 4567890</p>
@@ -46,12 +47,8 @@ const AdmProfile = () => {
                     </div>
                   </div>
                 </div>
-                <h3>My itens</h3>
+                <h3 className="my-itens">My itens</h3>
                 <div className="container main-card-list-adm">
-                  <ApartmentCard/>
-                  <ApartmentCard/>
-                  <ApartmentCard/>
-                  <ApartmentCard/>
                   <ApartmentCard/>
                   <ApartmentCard/>
                   <ApartmentCard/>
