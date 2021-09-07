@@ -5,12 +5,11 @@
   background-size: cover;
   background-position: left;
   // above is the part added for the curved line
-  width:105%;
+  width:100%;
   height:40%;
-  left:-3%;
-  position:absolute;
-  border-top-left-radius:10px;
-  border-top-right-radius:10px;
+  // position:absolute;
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;
   border-bottom-left-radius: 50% 20%;
   border-bottom-right-radius: 50% 20%;
 }

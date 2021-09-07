@@ -10,20 +10,6 @@ const Housinglist = () => {
         <HousingCard />
         <HousingCard />
         <HousingCard />
-        <HousingCard />
-        <HousingCard />
-        <HousingCard />
-        <HousingCard />
-        <HousingCard />
-        <HousingCard />
-        <HousingCard />
-        <HousingCard />
-        <HousingCard />
-        <HousingCard />
-        <HousingCard />
-        <HousingCard />
-        <HousingCard />
-        <HousingCard />
     </div>
   );
 };

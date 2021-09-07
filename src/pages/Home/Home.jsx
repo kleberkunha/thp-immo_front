@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import Jumbotron from 'components/Jumbotron/Jumbotron';
 import HousingList from 'components/HousingList/HousingList';
+import Navbar from 'components/Navbar/Navbar';
 
 const Home = () => {
   return(
     <>
     <div className="homepage">
+      <Navbar />
       <Jumbotron />
       <HousingList />
     </div>
