@@ -29,7 +29,6 @@ const Home = () => {
       <HousingList />
     </div>
       <Link to="ApartmentsProfile">Go to AdProfile</Link>
-      <button className="btn btn-primary">dddd</button>
 
     </>
   )
