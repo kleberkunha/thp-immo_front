@@ -16,7 +16,6 @@ const AdmProfile = () => {
                       <h1>Camila Smith</h1>
                       <p>deydey@theEmail.com</p>
                   </div>
-
                   <ul className="nav nav-pills nav-stacked">
                       <li className="active"><Link to="#"> <i className="fa fa-user"></i> Profile</Link></li>
                       <li><Link to="#"> <i className="fa fa-calendar"></i> Recent Activity <span className="label label-warning pull-right r-activity">9</span></Link></li>
@@ -42,10 +41,7 @@ const AdmProfile = () => {
                           <p><span>Email </span>: jsmith@flatlab.com</p>
                       </div>
                       <div className="bio-row">
-                          <p><span>Mobile </span>: (12) 03 4567890</p>
-                      </div>
-                      <div className="bio-row">
-                          <p><span>Phone </span>: 88 (02) 123456</p>
+                          <p> (33) 03 4567890</p>
                       </div>
                     </div>
                   </div>
