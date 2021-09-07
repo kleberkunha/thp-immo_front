@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card'
 
 const ApartmentCard = () => {
   return (
-    <li>
+    <div>
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src="https://img.theculturetrip.com/wp-content/uploads/2016/01/799px-Typical_Paris_Apartment1.jpg" />
         <Card.Body>
@@ -14,7 +14,7 @@ const ApartmentCard = () => {
           </Card.Text>
         </Card.Body>
       </Card>
-    </li>
+    </div>
   );
 };
 

@@ -1,5 +1,4 @@
 import Carousel from 'react-bootstrap/Carousel'
-import Card from 'react-bootstrap/Card'
 import ApartmentCard from 'components/CardsApComponent/ApartmentCard';
 import ContactCard from 'components/ContactCard/ContactCard';
 import PropertyPresentation from 'components/PropertyPresentation/PropertyPresentation';
