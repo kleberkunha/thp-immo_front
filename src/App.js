@@ -11,6 +11,7 @@ import Login from 'pages/Login/Login';
 import Register from 'pages/Register/Register';
 import AdProfile from 'pages/Apartment/Apartment';
 import UserProfile from 'pages/UserProfile/UserProfile';
+import CreateProperty from 'pages/CreateProperty/CreateProperty';
 
 // COMPONENTS IMPORTS
 import Navbar from 'components/Navbar/Navbar';
@@ -51,11 +52,13 @@ function App() {
           <Navbar auth={ isAuthTrue }/>
           <Switch>
             <Route path="/" exact component={Home}/>
+            {/* <Route path="/register" exact component={Register} />*/}
+            <Route path="/login" exact component={Login} /> 
             <Route path="/register" exact component={Register} />
-            <Route path="/login" exact component={Login} />
             <Route path="/ApartmentsProfile" component={AdProfile} />
             <Route path="/profile" component={UserProfile} />
-          </Switch>
+            <Route path="/create-property" component={CreateProperty}/>
+</Switch>
           <Footer/>
         </BrowserRouter>
       </>
