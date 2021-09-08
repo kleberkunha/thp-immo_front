@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 import ApartmentCard from "components/CardsApComponent/ApartmentCard";
 import './UserProfileResponsive/UserProfileResponsive.scss';
-const AdmProfile = () => {
+import HousingList from 'components/HousingList/HousingList';
+import Loading from 'components/Loading/Loading';
+import { useDispatch, useSelector } from 'react-redux';
+
+const  UserProfile = () => {
+
+  const listings = useSelector(state => state.listings)
+
   return (
     <>
       <div className="profile-adm-background">
@@ -49,14 +56,13 @@ const AdmProfile = () => {
                 </div>
                 <h3 className="my-itens">My itens</h3>
                 <div className="container main-card-list-adm">
-                  <ApartmentCard/>
-                  <ApartmentCard/>
-                  <ApartmentCard/>
-                  <ApartmentCard/>
-                  <ApartmentCard/>
-                  <ApartmentCard/>
-                  <ApartmentCard/>
-                  <ApartmentCard/>
+                  {
+                    listings.listings ?
+
+                      <HousingList data={listings.listings} />
+                      :
+                      <Loading />
+                  }
                 </div>
               </div>
             </div>
@@ -67,4 +73,4 @@ const AdmProfile = () => {
   )
 }
 
-export default AdmProfile;
+export default UserProfile;

@@ -19,6 +19,15 @@
     display: flex;
     justify-content: center;
   }
+  .main-card-list{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr) !important;
+    margin: 0 !important;
+  }
+  .main-card-list-adm{
+    padding: 0;
+    margin-left: -15px !important;
+  }
 }
 @media screen and (width: 375px){
   .main-card-list-adm{
@@ -41,6 +50,15 @@
     display: flex;
     justify-content: center;
   }
+  .main-card-list{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr) !important;
+    margin: 0 !important;
+  }
+  .main-card-list-adm{
+    padding: 0;
+    margin-left: -15px !important;
+  }
 }
 @media screen and (width: 425px){
   .main-card-list-adm{
@@ -62,6 +80,15 @@
   .align-details{
     display: flex;
     justify-content: center;
+  }
+  .main-card-list{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr) !important;
+    margin: 0 !important;
+  }
+  .main-card-list-adm{
+    padding: 0;
+    margin-left: -15px !important;
   }
 }
 @media screen and (width: 768px){
@@ -93,6 +120,15 @@
   }
   .bio-graph-info{
     width: 500px;
+  }
+  .main-card-list{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr) !important;
+    margin: 0 !important;
+  }
+  .main-card-list-adm{
+    padding: 0;
+    margin-left: -15px !important;
   }
 }
 @media screen and (width: 1440px){
