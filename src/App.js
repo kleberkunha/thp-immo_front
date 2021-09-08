@@ -1,9 +1,10 @@
 // CONFIG IMPORTS
 import React from 'react';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux";
 import { loginUserWithCookie } from 'services/apiManager';
+import Cookies from 'js-cookie';
 
 // PAGES IMPORTS
 import Home from  'pages/Home/Home';
@@ -18,11 +19,13 @@ import Apartment from 'pages/Apartment/Apartment';
 // COMPONENTS IMPORTS
 import Navbar from 'components/Navbar/Navbar';
 import Footer from 'components/Footer/footer';
+import Loading from 'components/Loading/Loading';
 
 
 function App() {
 
   const currentUser = useSelector((state) => state.users);
+  const login = useSelector((state) => state.users.login);
   const [isAuthTrue, setIsAuthTrue] = useState();
   // the loading will be used for private routes such as profile
   const [loading, setLoading] = useState(false);
@@ -30,21 +33,33 @@ function App() {
   useEffect(() => {
     checkAuth().then(res => {
       setIsAuthTrue(res);
-      // setLoading(false);
+      setLoading(true);
     })
   });
 
 
   const checkAuth = async() => {
-    const a = await (loginUserWithCookie());
-    if (a === true) {
-      return true;
-    } else {
-      return false;
-    }
+    return await (loginUserWithCookie());
   }
 
-  // <Navbar auth={ isAuthTrue }/>
+  const PrivateRoute = ({ component: Component, ...rest }) => (
+    <>
+      { loading ? ( 
+        < Route {...rest} render={ props => ( isAuthTrue ? ( <Component {...props} />) : (  <Redirect to={{ pathname: '/login' }} /> ) )} />)
+        : (
+          <Loading type='spin' color='#454545' />
+        )
+      }
+    </>
+);
+
+const isAuth = () => {
+  return (
+    login === '' &&
+    Cookies.get('cookie_token') === undefined ? false : true)
+};
+
+  // <Route path="/profile" component={UserProfile} />
 
   return (
       <>
@@ -52,11 +67,15 @@ function App() {
           <Navbar auth={ isAuthTrue }/>
           <Switch>
             <Route path="/" exact component={Home}/>
+            <Route path="/login">
+              { isAuth() ? <Redirect to="/" /> : <Login /> }
+            </Route>
+            <Route path="/register">
+              { isAuth() ? <Redirect to="/" /> : <Register /> }
+            </Route>
             <Route path="/listing/:slug" exact component={Apartment}/>
-            <Route path="/login" exact component={Login} /> 
-            <Route path="/register" exact component={Register} />
             <Route path="/ApartmentsProfile" component={AdProfile} />
-            <Route path="/profile" component={UserProfile} />
+            <PrivateRoute path="/profile" exact component={UserProfile} />
             <Route path="/create-property" component={CreateProperty}/>
             <Route path="/conditions" component={Conditions}/>
           </Switch>
