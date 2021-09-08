@@ -33,9 +33,7 @@ const Home = () => {
           <Loading />
         }
       </div>
-      
     </div>
-
     </>
   )
 }

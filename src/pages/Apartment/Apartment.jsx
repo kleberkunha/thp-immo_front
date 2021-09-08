@@ -28,7 +28,7 @@ const ApartmentsProfile = () => {
 
   return (
     <>
-      <div className="mt-5">
+      <div className="">
         <div className="container infoAp-location-price border">
           <div className="row d-flex top-content-location-price-responsive">
             <div className="row title-plus-location d-block mt-3">

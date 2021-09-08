@@ -143,3 +143,17 @@ label{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
+
+.main-card-list-profileAp .card:hover{
+  border: 1px solid black;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 2px black;
+}
+
+.top-content-location-price-responsive{
+  margin-top: 70px;
+}
+
+.main-card-list-profileAp .main-card-list{
+  margin-left: -15px !important;
+}

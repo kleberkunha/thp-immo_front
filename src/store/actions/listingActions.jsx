@@ -19,3 +19,25 @@ export const fetchListingsFailure = (error) => {
     error,
   };
 };
+
+export const CREATE_LISTING_REQUEST = "CREATE_LISTING_REQUEST";
+export const CREATE_LISTING_SUCCESS = "CREATE_LISTING_SUCCESS";
+export const CREATE_LISTING_FAILURE = "CREATE_LISTING_FAILURE";
+
+export const createListingRequest = () => {
+  return {
+    type: CREATE_LISTING_REQUEST,
+  };
+};
+export const createListingSuccess = (listing) => {
+  return {
+    type: CREATE_LISTING_SUCCESS,
+    listing,
+  };
+};
+export const createListingFailure = (error) => {
+  return {
+    type: CREATE_LISTING_FAILURE,
+    error,
+  };
+};
