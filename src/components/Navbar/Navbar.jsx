@@ -33,20 +33,29 @@ const Navbar = ({auth}) => {
       </div>
       <div className="nav-right col-6 d-flex justify-content-end">
         {!auth && (
-            <>
-              <NavLink exact to="/register" className="btn btn-primary mx-2">
-                Sign Up
-              </NavLink>
-              <NavLink exact to="/login" className="btn btn-primary mx-2">
-                Log In
-              </NavLink>
-            </>
-          )}
-          {auth && (
-            <button onClick={ () => handleLogOut() } className="btn btn-danger mx-2"> Log Out </button>
-          )}
+          <>
+            <NavLink exact to="/register" className="btn btn-primary mx-2">
+              Sign Up
+            </NavLink>
+            <NavLink exact to="/login" className="btn btn-primary mx-2">
+              Log In
+            </NavLink>
+          </>
+        )}
+        {auth && (<>
+          <NavLink exact to="/create-property" className="add-property">
+            <i className="fas fa-plus-circle"></i>Ajouter une annonce
+          </NavLink>
+          <button
+            onClick={() => handleLogOut()}
+            className="btn btn-danger mx-2"
+          >
+            {" "}
+            Log Out{" "}
+          </button>
+        </>
+        )}
       </div>
-
     </div>
   );
 };
