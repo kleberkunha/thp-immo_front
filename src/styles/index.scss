@@ -8,8 +8,9 @@
 @import "pages/Apartment/apartment";
 @import "pages/Login/login";
 @import "pages/Register/register";
+@import "pages/Conditions/conditions";
 @import "pages/Apartment/ComponentsStyle/ImagesCarouselmini/_properties.scss";
-@import "../pages/UserProfile/UserProfile.scss";
+@import "pages/UserProfile/UserProfile.scss";
 @import "pages/CreateProperty/create-property";
 
 
@@ -20,7 +21,7 @@
 @import "components/HousingCard/housingCard";
 @import "components/Jumbotron/jumbotron";
 @import "components/Navbar/navbar";
-@import "components/Footer/footer";
+@import "../components/Footer/footer.scss";
 @import "components/CreatePropertyForm/create-property-form";
 
 

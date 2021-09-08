@@ -12,12 +12,11 @@ import Register from 'pages/Register/Register';
 import AdProfile from 'pages/Apartment/Apartment';
 import UserProfile from 'pages/UserProfile/UserProfile';
 import CreateProperty from 'pages/CreateProperty/CreateProperty';
+import Conditions from 'pages/Conditions/conditions';
 
 // COMPONENTS IMPORTS
 import Navbar from 'components/Navbar/Navbar';
 import Footer from 'components/Footer/footer';
-
-
 
 
 function App() {
@@ -58,7 +57,8 @@ function App() {
             <Route path="/ApartmentsProfile" component={AdProfile} />
             <Route path="/profile" component={UserProfile} />
             <Route path="/create-property" component={CreateProperty}/>
-</Switch>
+            <Route path="/conditions" component={Conditions}/>
+          </Switch>
           <Footer/>
         </BrowserRouter>
       </>
