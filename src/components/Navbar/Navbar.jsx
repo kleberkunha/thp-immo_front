@@ -1,9 +1,23 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { logoutUser } from "services/apiManager";
+import Cookies from 'js-cookie';
 
 const Navbar = ({auth}) => {
+  
+  const dispatch = useDispatch();
+
+  const handleLogOut = () => {
+    Cookies.remove('token_cookie')
+    Cookies.remove("id_cookie");
+    dispatch(logoutUser);
+    window.location.reload();
+  }
+  
+  
   return (
-    <div className="navigation d-flex align-items-center">
+    <div className="navigation d-flex align-items-center p-2">
       <div className="nav-left col-6">
         <NavLink exact to="/" activeClassName="nav-active">
           Accueil
@@ -29,8 +43,7 @@ const Navbar = ({auth}) => {
             </>
           )}
           {auth && (
-            // <button onClick={ () => handleLogOut() } className="btn btn-danger mx-2"> Log Out </button>
-            <button className="btn btn-danger mx-2"> Log Out </button>
+            <button onClick={ () => handleLogOut() } className="btn btn-danger mx-2"> Log Out </button>
           )}
       </div>
 

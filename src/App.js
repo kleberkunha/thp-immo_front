@@ -26,7 +26,7 @@ function App() {
   const currentUser = useSelector((state) => state.users);
   const [isAuthTrue, setIsAuthTrue] = useState();
   // the loading will be used for private routes such as profile
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     checkAuth().then(res => {
@@ -35,15 +35,17 @@ function App() {
     })
   });
 
+
   const checkAuth = async() => {
-    await (loginUserWithCookie());
-    if (loginUserWithCookie() === true) {
+    const a = await (loginUserWithCookie());
+    if (a === true) {
       return true;
     } else {
       return false;
     }
   }
 
+  // <Navbar auth={ isAuthTrue }/>
 
   return (
       <>
@@ -52,7 +54,6 @@ function App() {
           <Switch>
             <Route path="/" exact component={Home}/>
             <Route path="/listing/:slug" exact component={Apartment}/>
-            {/* <Route path="/register" exact component={Register} />*/}
             <Route path="/login" exact component={Login} /> 
             <Route path="/register" exact component={Register} />
             <Route path="/ApartmentsProfile" component={AdProfile} />

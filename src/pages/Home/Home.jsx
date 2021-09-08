@@ -29,9 +29,7 @@ const Home = () => {
           listings.listings ? <HousingList data={listings.listings} /> : <Loading /> 
         }
       </div>
-      
     </div>
-
     </>
   )
 }
