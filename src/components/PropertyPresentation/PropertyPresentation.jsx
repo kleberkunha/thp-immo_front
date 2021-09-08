@@ -11,15 +11,6 @@ const PropertyPresentation = ({description}) => {
             <div>Enterprise: no</div>
             <div>Bathrooms: 4 or more</div>
           </div>
-          <div className="prop-2">
-            <div>gross area (m²): 618 m²</div>
-            <div>Typology: T4</div>
-            <div>Condition: Used</div>
-          </div>
-          <div className="prop-3">
-            <div>land area (m²): 303 m²</div>
-            <div>Construction year: 2010</div>
-          </div>
         </div>
         <hr />
       </div>
