@@ -20,6 +20,7 @@ import Apartment from 'pages/Apartment/Apartment';
 import Navbar from 'components/Navbar/Navbar';
 import Footer from 'components/Footer/footer';
 import Loading from 'components/Loading/Loading';
+import HamburgerMenu from 'components/HamburgerMenu/HamburgerMenu';
 
 
 function App() {
@@ -63,7 +64,8 @@ const isAuth = () => {
 
   return (
       <>
-        <BrowserRouter>
+      <BrowserRouter>
+          <HamburgerMenu auth={isAuthTrue}/>
           <Navbar auth={ isAuthTrue }/>
           <Switch>
             <Route path="/" exact component={Home}/>
