@@ -1,31 +1,80 @@
-export const CREATE_USER = 'CREATE_USER';
-export const LOGIN_USER = 'LOGIN_USER';
-export const LOGOUT_USER = 'LOGIN_USER';
-export const SET_USER_PROFILE = 'SET_USER_PROFILE';
 
+export const FETCH_USER_REQUEST = "FETCH_USER_REQUEST";
+export const FETCH_USER_SUCCESS = "FETCH_USER_SUCCESS";
+export const FETCH_USER_FAILURE = "FETCH_USER_FAILURE";
 
-// BELOW IS THE FUNCTION TO LOG IN A USER
-
-export const loginUser = (userData) => async(dispatch) => {  
-  
-  const config = {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(userData)
+export const fetchUserRequest = () => {
+  return {
+    type: FETCH_USER_REQUEST,
   };
+};
+export const fetchUserSuccess = (user) => {
+  return {
+    type: FETCH_USER_SUCCESS,
+    user,
+  };
+};
+export const fetchUSerFailure = (error) => {
+  return {
+    type: FETCH_USER_FAILURE,
+    error,
+  };
+};
 
-  const res = await fetch('http://localhost:3000/api/login', config)
-  const user = await res.json();
-  let token = await res.headers.get('authorization');
-  if (user.data) {
-    console.log("1234")
-    Cookies.set('token', token.split(' ')[1], {secure: true});
-    // Cookies.set('token', token);
-    Cookies.set('id', user.data.id, {secure: true});
-    dispatch({ type: LOGIN_USER, payload: user.data });
-  } else {
-    console.log('login fetch not working')
-  }
+
+export const FETCH_LOGIN_REQUEST = "FETCH_LOGIN_REQUEST";
+export const FETCH_LOGIN_SUCCESS = "FETCH_LOGIN_SUCCESS";
+export const FETCH_LOGIN_FAILURE = "FETCH_LOGIN_FAILURE";
+export const FETCH_LOGIN_LOGOUT = "FETCH_LOGIN_LOGOUT";
+
+export const fetchLoginRequest = () => {
+  return {
+    type: FETCH_LOGIN_REQUEST,
+  };
+};
+export const fetchLoginSuccess = (login) => {
+  return {
+    type: FETCH_LOGIN_SUCCESS,
+    login,
+  };
+};
+export const fetchLoginFailure = (error) => {
+  return {
+    type: FETCH_LOGIN_FAILURE,
+    error,
+  };
+};
+export const fetchLoginLogout = () => {
+  return {
+    type: FETCH_LOGIN_LOGOUT
+  };
+};
+
+
+export const FETCH_REGISTER_REQUEST = "FETCH_REGISTER_REQUEST";
+export const FETCH_REGISTER_SUCCESS = "FETCH_REGISTER_SUCCESS";
+export const FETCH_REGISTER_FAILURE = "FETCH_REGISTER_FAILURE";
+export const FETCH_REGISTER_UNREGISTER = "FETCH_REGISTER_UNREGISTER";
+
+export const fetchRegisterRequest = () => {
+  return {
+    type: FETCH_REGISTER_REQUEST,
+  };
+};
+export const fetchRegisterSuccess = (register) => {
+  return {
+    type: FETCH_REGISTER_SUCCESS,
+    register,
+  };
+};
+export const fetchRegisterFailure = (error) => {
+  return {
+    type: FETCH_REGISTER_FAILURE,
+    error,
+  };
+};
+export const fetchRegisterUnregister = () => {
+  return {
+    type: FETCH_REGISTER_UNREGISTER
+  };
 };

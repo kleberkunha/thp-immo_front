@@ -1,6 +1,8 @@
 import Cookies from "js-cookie";
 import { fetchListingsFailure, fetchListingsRequest, fetchListingsSuccess } from "store/actions/listingActions";
-
+import { fetchLoginFailure, fetchLoginLogout, fetchLoginRequest, fetchLoginSuccess } from "store/actions/userActions";
+import { fetchRegisterFailure, fetchRegisterRequest, fetchRegisterSuccess, fetchRegisterUnregister } from "store/actions/userActions";
+import { fetchUSerFailure, fetchUserRequest, fetchUserSuccess } from "store/actions/userActions";
 
 const baseUrl = "https://thpimmo-back.herokuapp.com";
 
@@ -25,25 +27,90 @@ export const listingsFetch = () => {
   };
 };
 
-export const loginUser = (userData) => async(dispatch) => {  
-  
-  const config = {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json'
+// BELOW IS THE FUNCTION TO CREATE A NEW USER
+export const registerFetch = (username, email, password, passwordConfirmation) => {
+  const data = {
+    user: {
+      username,
+      email,
+      password,
+      password_confirmation: passwordConfirmation,
     },
-    body: JSON.stringify(userData)
   };
+  return (dispatch) => {
+    let token
+    dispatch(fetchRegisterRequest());
+    fetch(baseUrl + "/api/signup", {
+      method: "post",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (response.headers.get("authorization")) {
+          token = response.headers.get("authorization").split("Bearer ")[1];
+        }
+        return response.json()
+      })
+      .then((response ) => {
+        if (response.errors || response.error) {
+          dispatch(fetchRegisterFailure(response.errors));
+        } else {
+          Cookies.set("token_cookie", token);
+          Cookies.set("id_cookie", response.data.id);
+          dispatch(fetchRegisterSuccess(response));
+        }
+      });
+  };
+};
 
-  const res = await fetch(baseUrl + '/api/login', config)
-  const user = await res.json();
-  let token = await res.headers.get('authorization');
-  if (user.data) {
-    Cookies.set('token', token.split(' ')[1], {secure: true});
-    // Cookies.set('token', token);
-    Cookies.set('id', user.data.id, {secure: true});
-    dispatch({ type: LOGIN_USER, payload: user.data });
-  } else {
-    console.log('login fetch not working')
+
+// BELOW IS THE FUNCTION TO LOG IN
+export const loginFetch = (
+  email,
+  password
+) => {
+  const data = {
+    user: {
+      email,
+      password
+    },
+  };
+  return (dispatch) => {
+    let token;
+    dispatch(fetchLoginRequest());
+    fetch(baseUrl + "/api/login", {
+      method: "post",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (response.headers.get("authorization")) {
+          token = response.headers.get("authorization").split("Bearer ")[1];
+        }
+        return response.json();
+      })
+      .then((response) => {
+        if (response.errors || response.error) {
+          dispatch(fetchLoginFailure(response.errors));
+        } else {
+          Cookies.set("token_cookie", token);
+          Cookies.set('id_cookie',response.data.id);
+          dispatch(fetchLoginSuccess(response));
+        }
+      });
+  };
+};
+
+// BELOW IS THE FUNCTION TO LOG OUT
+export const logout = () => {
+  return (dispatch) => {
+    Cookies.remove('token_cookie')
+    Cookies.remove("id_cookie");
+    dispatch(fetchRegisterUnregister())
+    dispatch(fetchLoginLogout())
   }
 };

@@ -1,59 +1,52 @@
-import Cookies from "js-cookie";
-import { CREATE_USER, LOGIN_USER, LOGOUT_USER, SET_USER_PROFILE, EDIT_USER_PROFILE } from "store/actions/userActions";
+import { FETCH_USER_FAILURE, FETCH_USER_REQUEST, FETCH_USER_SUCCESS } from "store/actions/userActions";
+import { FETCH_LOGIN_FAILURE, FETCH_LOGIN_LOGOUT, FETCH_LOGIN_REQUEST, FETCH_LOGIN_SUCCESS } from "store/actions/userActions";
+import { FETCH_REGISTER_FAILURE, FETCH_REGISTER_REQUEST, FETCH_REGISTER_SUCCESS, FETCH_REGISTER_UNREGISTER } from "store/actions/userActions";
 
 
-const userInitialState = {
+
+const initialState = {
   loading: false,
   error: "",
-  user : ""
-  };
-const emptyState = undefined
-
-export const listingsReducer = (state = initialState, { type, error, listings }) => {
-  switch (type) {
-    case FETCH_LISTINGS_REQUEST:
-      return { ...state, loading: true };
-
-    case FETCH_LISTINGS_SUCCESS:
-      return { ...state, loading: false, listings: listings, error:"" };
-
-    case FETCH_LISTINGS_FAILURE:
-      return { ...state, loading: false, error: error };
-
-    default:
-      return state;
-  }
+  user: "",
+  register: "",
+  login: "",
 };
 
+export const userReducer = (state = initialState, { type, error, user, login, register }) => {
+  switch (type) {
+    case FETCH_USER_REQUEST:
+      return { ...state, loading: true };
 
+    case FETCH_USER_SUCCESS:
+      return { ...state, loading: false, user: user, error:"" };
 
-export default function userReducer(state = userInitialState, { action.type, error, listings }) {
+    case FETCH_USER_FAILURE:
+      return { ...state, loading: false, error: error };
 
-  switch (action.type) {
-    case CREATE_USER:
-      return [action.payload, ...state];
-    case LOGIN_USER:
-      return {
-        ...state,
-        user: action.payload.user,
-        token: action.payload.jwt,
-      };
-    case LOGOUT_USER:
-      return emptyState;
-    case SET_USER_PROFILE:
-      return {
-        ...state,
-        username: action.payload.username,
-        email: action.payload.email,
-        id: action.payload.id,
-      };
-    case EDIT_USER_PROFILE:
-      return {
-        ...state,
-        username: action.payload.username,
-        email: action.payload.email,
-        id: action.payload.id,
-      }
+    case FETCH_LOGIN_REQUEST:
+      return { ...state, loading: true };
+
+    case FETCH_LOGIN_SUCCESS:
+      return { ...state, loading: false, login: login, error:"" };
+
+    case FETCH_LOGIN_FAILURE:
+      return { ...state, loading: false, error: error };
+    
+    case FETCH_LOGIN_LOGOUT:
+      return { ...state, loading: false, error: "", login:"" };
+
+    case FETCH_REGISTER_REQUEST:
+      return { ...state, loading: true };
+
+    case FETCH_REGISTER_SUCCESS:
+      return { ...state, loading: false, register: register, error:"" };
+
+    case FETCH_REGISTER_FAILURE:
+      return { ...state, loading: false, error: error };
+    
+    case FETCH_REGISTER_UNREGISTER:
+      return { ...state, loading: false, error: "", register:"" };
+
     default:
       return state;
   }

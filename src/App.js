@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import Cookies from 'js-cookie';
 
 // PAGES IMPORTS
@@ -21,9 +21,10 @@ import Footer from 'components/Footer/footer';
 
 function App() {
 
-  const currentUser = useSelector((state) => state.userReducer.user);
+  const dispatch = useDispatch()
+  const currentUser = useSelector((state) => state.users);
   const [isAuthTrue, setIsAuthTrue] = useState();
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     checkAuth().then(res => {
@@ -31,6 +32,36 @@ function App() {
       // setLoading(false);
     })
   });
+
+  const getListings = () => {
+    dispatch(listingsFetch())
+  }
+
+  const loginUserWithCookie = async() =>{
+    const token = Cookies.get('token');
+    const id = Cookies.get('id');
+
+    const cookiesConfig = {
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+        // Authorization: `${token}`,
+      },
+    };
+  
+    const response = await fetch(`http://localhost:3000/api/users/${id}`, cookiesConfig)
+    const cookieData = await response.json();
+    console.log(cookieData);
+    if (!cookieData.error) {
+      console.log("is true");
+      return true;
+    } else {
+      console.log("is false");
+      return false;
+    }
+
+  };
 
   const checkAuth = async() => {
     const a = await (loginUserWithCookie());
@@ -41,11 +72,13 @@ function App() {
     }
   }
 
+   {/* <Navbar auth={ isAuthTrue }/> */}
 
   return (
       <>
         <BrowserRouter>
-          <Navbar auth={ isAuthTrue }/>
+         
+          <Navbar />
           <Switch>
             <Route path="/" exact component={Home}/>
             <Route path="/register" exact component={Register} />
