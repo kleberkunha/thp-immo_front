@@ -13,13 +13,13 @@ import Register from 'pages/Register/Register';
 import AdProfile from 'pages/Apartment/Apartment';
 import UserProfile from 'pages/UserProfile/UserProfile';
 import CreateProperty from 'pages/CreateProperty/CreateProperty';
+import Conditions from 'pages/Conditions/conditions';
+import Apartment from 'pages/Apartment/Apartment';
 
 // COMPONENTS IMPORTS
 import Navbar from 'components/Navbar/Navbar';
 import Footer from 'components/Footer/footer';
 import Loading from 'components/Loading/Loading';
-
-
 
 
 function App() {
@@ -73,9 +73,11 @@ const isAuth = () => {
             <Route path="/register">
               { isAuth() ? <Redirect to="/" /> : <Register /> }
             </Route>
+            <Route path="/listing/:slug" exact component={Apartment}/>
             <Route path="/ApartmentsProfile" component={AdProfile} />
             <PrivateRoute path="/profile" exact component={UserProfile} />
             <Route path="/create-property" component={CreateProperty}/>
+            <Route path="/conditions" component={Conditions}/>
           </Switch>
           <Footer/>
         </BrowserRouter>
