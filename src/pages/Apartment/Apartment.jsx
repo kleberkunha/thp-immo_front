@@ -2,7 +2,6 @@ import Carousel from 'react-bootstrap/Carousel'
 import ApartmentCard from 'components/CardsApComponent/ApartmentCard';
 import ContactCard from 'components/ContactCard/ContactCard';
 import PropertyPresentation from 'components/PropertyPresentation/PropertyPresentation';
-import Navbar from 'components/Navbar/Navbar';
 import Loading from 'components/Loading/Loading';
 import HousingList from 'components/HousingList/HousingList';
 import { useDispatch, useSelector } from 'react-redux';
@@ -30,7 +29,6 @@ const ApartmentsProfile = () => {
 
   return (
     <>
-      <Navbar />
       <div className="mt-5">
         <div className="container infoAp-location-price border">
           <div className="row d-flex top-content-location-price-responsive">
