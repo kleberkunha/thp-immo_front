@@ -7,6 +7,7 @@ import AdProfile from 'pages/Apartment/Apartment';
 import UserProfile from 'pages/UserProfile/UserProfile';
 import Footer from 'components/Footer/footer';
 import Apartment from 'pages/Apartment/Apartment';
+import CreateProperty from 'pages/CreateProperty/CreateProperty';
 
 
 function App() {
@@ -16,9 +17,10 @@ function App() {
           <Switch>
             <Route path="/" exact component={Home}/>
             {/* <Route path="/register" exact component={Register} />*/}
-            <Route path="/login" exact component={Login} /> }
+            <Route path="/login" exact component={Login} /> 
             <Route path="/ApartmentsProfile" component={AdProfile} />
             <Route path="/profile" component={UserProfile} />
+            <Route path="/create-property" component={CreateProperty}/>
           </Switch>
           <Footer/>
       </BrowserRouter>
