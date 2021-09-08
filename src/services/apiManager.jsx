@@ -67,6 +67,7 @@ export const registerFetch = (username, email, password, passwordConfirmation) =
 
 
 // BELOW IS THE FUNCTION TO LOG IN
+
 export const loginFetch = (userData) => {
 
   return (dispatch) => {

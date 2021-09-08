@@ -19,8 +19,8 @@ const LoginForm = () => {
             email: email,
             password: password
         }
-    };
-
+      }
+      console.log("hello");
       await dispatch(loginFetch(userData))
     }
 };
@@ -41,8 +41,7 @@ const LoginForm = () => {
         <div className="forgot-password mt-3">
           <Link>Forgot password</Link>
         </div>
-        <button type="button" className="btn btn-light login-button mt-3">Login</button>
-        <button type="button" className="btn btn-light register-button">Register</button>
+        <input type="submit" className="btn btn-light login-button mt-3" value="Login" />
       </form>
     </div>
   );
