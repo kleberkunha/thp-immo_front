@@ -1,0 +1,14 @@
+.homepage .main-card-list{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.home-cards{
+  display: flex;
+  justify-content: center;
+}
+
+.home-cards .main-card-list{
+  width: 1400px !important;
+  margin-left: -200px !important;
+
+}

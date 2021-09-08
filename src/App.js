@@ -10,7 +10,8 @@ import Home from  'pages/Home/Home';
 import Login from 'pages/Login/Login';
 import Register from 'pages/Register/Register';
 import AdProfile from 'pages/Apartment/Apartment';
-import ProfileUser from './pages/ProfileUser/profileUser';
+
+import UserProfile from 'pages/UserProfile/UserProfile';
 import AdmProfile from 'pages/AdmProfile/AdmProfile';
 import Apartment from 'pages/Apartment/Apartment';
 
@@ -54,11 +55,9 @@ function App() {
           <Switch>
             <Route path="/" exact component={Home}/>
             <Route path="/register" exact component={Register} />
-            <Route path="/login" exact component={Login} /> }
+            <Route path="/login" exact component={Login} />
             <Route path="/ApartmentsProfile" component={AdProfile} />
-            <Route path="/listing" component={Apartment} />
             <Route path="/profile" component={ProfileUser} />
-            <Route path="/AdmProfile" component={AdmProfile} />
           </Switch>
           <Footer/>
         </BrowserRouter>
