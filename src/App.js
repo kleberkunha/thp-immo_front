@@ -2,9 +2,11 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from  'pages/Home/Home';
 import Login from 'pages/Login/Login';
+import Register from 'pages/Register/Register';
 import AdProfile from 'pages/Apartment/Apartment';
 import UserProfile from 'pages/UserProfile/UserProfile';
 import Footer from 'components/Footer/footer';
+import Apartment from 'pages/Apartment/Apartment';
 
 
 function App() {

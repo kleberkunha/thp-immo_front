@@ -1,7 +1,9 @@
 .navigation {
   position: fixed;
-  margin: 40px 0;
+  margin: 0;
   display: flex;
+  background-color: $color-2;
+  width: 100%;
 
   a {
     margin: 10px;
