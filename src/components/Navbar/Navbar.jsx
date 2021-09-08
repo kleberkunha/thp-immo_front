@@ -10,11 +10,8 @@ const Navbar = () => {
       <NavLink exact to="/" activeClassName="nav-active">
         Blog
       </NavLink>
-      <NavLink exact to="/profileUser" activeClassName="nav-active">
-        Profile
-      </NavLink>
-      <NavLink exact to="/admProfile" activeClassName="nav-active">
-       ADM Profile
+      <NavLink exact to="/profile" activeClassName="nav-active">
+       Profile
       </NavLink>
     </div>
   );

@@ -8,9 +8,8 @@
 @import "pages/Apartment/apartment";
 @import "pages/Login/login";
 @import "pages/Register/register";
-@import "pages/ProfileUser/profileUser.scss";
 @import "pages/Apartment/ComponentsStyle/ImagesCarouselmini/_properties.scss";
-@import "../pages/AdmProfile/AdmProfile.scss";
+@import "../pages/UserProfile/UserProfile.scss";
 
 
 
@@ -30,4 +29,3 @@
 
 @import "pages/Apartment/ResponsiveApartmentPage/responsive";
 @import "pages/Login/ResponsiveLogin/loginResponsive.scss";
-@import "pages/ProfileUser/ProfuleUserResponsive/ProfileUserResponsive.scss";

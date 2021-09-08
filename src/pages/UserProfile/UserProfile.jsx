@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import ApartmentCard from "components/CardsApComponent/ApartmentCard";
-import './AdmProfileResponsive/AdmProfileResponsive.scss';
+import './UserProfileResponsive/UserProfileResponsive.scss';
 const AdmProfile = () => {
   return (
     <>
