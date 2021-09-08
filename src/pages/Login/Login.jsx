@@ -1,6 +1,11 @@
 import LoginForm from "components/LoginForm/LoginForm";
+// import { Redirect } from 'react-router-dom';
+// import { useSelector } from 'react-redux';
 
 const Login = () => {
+
+  // const userState = useSelector((state) => state.users);
+
   return (
     <>
       <div className="backgroundLogin">
@@ -12,7 +17,9 @@ const Login = () => {
                   <div class="row">
                     <div class="col-sm">
                       <div className="box-dark-login">
-                        <LoginForm />
+                      <LoginForm />
+                      {/* { userState.login !== "" ? ( <Redirect to={{ pathname: '/profile' }} /> ) : ( <LoginForm /> )  } */}
+                      {/* { userState.login == "" ? ( <LoginForm /> ) : ( <Redirect to={{ pathname: '/profile' }} /> )  } */}
                       </div>
                     </div>
                   </div>
