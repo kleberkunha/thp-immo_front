@@ -10,10 +10,7 @@ import Home from  'pages/Home/Home';
 import Login from 'pages/Login/Login';
 import Register from 'pages/Register/Register';
 import AdProfile from 'pages/Apartment/Apartment';
-
 import UserProfile from 'pages/UserProfile/UserProfile';
-import AdmProfile from 'pages/AdmProfile/AdmProfile';
-import Apartment from 'pages/Apartment/Apartment';
 
 // COMPONENTS IMPORTS
 import Navbar from 'components/Navbar/Navbar';
@@ -57,7 +54,7 @@ function App() {
             <Route path="/register" exact component={Register} />
             <Route path="/login" exact component={Login} />
             <Route path="/ApartmentsProfile" component={AdProfile} />
-            <Route path="/profile" component={ProfileUser} />
+            <Route path="/profile" component={UserProfile} />
           </Switch>
           <Footer/>
         </BrowserRouter>

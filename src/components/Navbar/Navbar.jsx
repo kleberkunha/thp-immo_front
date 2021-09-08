@@ -11,9 +11,6 @@ const Navbar = ({auth}) => {
         <NavLink exact to="/listing" activeClassName="nav-active">
           One appartment
         </NavLink>
-        <NavLink exact to="/admProfile" activeClassName="nav-active">
-        ADM Profile
-        </NavLink>
         {auth && (
           <NavLink exact to="/profile" activeClassName="nav-active">
             Profile
