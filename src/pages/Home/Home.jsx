@@ -28,13 +28,16 @@ const Home = () => {
     <div className="homepage">
       <Navbar />
       <Jumbotron />
-      {
-        listings.listings ?
+      <div className="container-fluid home-cards">
+        {
+          listings.listings ?
 
           <HousingList data={listings.listings} />
           :
           <Loading />
-      }
+        }
+      </div>
+      
     </div>
 
     </>

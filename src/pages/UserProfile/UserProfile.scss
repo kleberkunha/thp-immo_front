@@ -294,7 +294,10 @@ ul.summary-list > li:last-child  {
 }
 .main-card-list-adm{
   padding: 0;
-  margin-left: -40px;
+  margin-left: -85px;
   flex-grow: 100;
-  overflow: scroll;
+}
+.main-card-list-adm .main-card-list{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
