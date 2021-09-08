@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
-import Navbar from 'components/Navbar/Navbar';
 
 const ProfileUser = () => {
   return (
     <>
-        <Navbar />
         <div className="background-profileUser">
         <div className="help-resizing-profileBackground">
             <div className="container emp-profile">

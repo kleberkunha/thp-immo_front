@@ -17,27 +17,27 @@ const ContactCard = () => {
     </div>
     <div>
       <form>
-        <div class="form-row">
-          <div class="form-group col-md-11">
+        <div className="form-row">
+          <div className="form-group col-md-11">
             <label for="inputEmail4">Name*</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email"/>
+            <input type="email" className="form-control" id="inputEmail4" placeholder="Email"/>
           </div>
-          <div class="form-group col-md-11">
+          <div className="form-group col-md-11">
             <label for="inputPassword4">Email*</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Password"/>
+            <input type="password" className="form-control" id="inputPassword4" placeholder="Password"/>
           </div>
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <label for="inputAddress">Phone Number*</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"/>
+          <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St"/>
         </div>
         <label htmlFor="exampleFormControlTextarea1">
           Send a message.
         </label>
         <textarea className="form-control" id="exampleFormControlTextarea1" rows="5"/>
         <p className="text-responsible mt-2">Responsible for processing your data: THP NEXT</p>
-        <input class="form-check-input" type="checkbox" id="gridCheck1"/>
-        <label class="form-check-label mx-2" for="gridCheck1">
+        <input className="form-check-input" type="checkbox" id="gridCheck1"/>
+        <label className="form-check-label mx-2" for="gridCheck1">
           Example checkbox
         </label>
       </form>
