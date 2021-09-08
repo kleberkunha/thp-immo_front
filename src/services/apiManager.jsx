@@ -2,7 +2,7 @@ import Cookies from "js-cookie";
 import { fetchListingsFailure, fetchListingsRequest, fetchListingsSuccess } from "store/actions/listingActions";
 import { fetchLoginFailure, fetchLoginLogout, fetchLoginRequest, fetchLoginSuccess } from "store/actions/userActions";
 import { fetchRegisterFailure, fetchRegisterRequest, fetchRegisterSuccess, fetchRegisterUnregister } from "store/actions/userActions";
-import { fetchUSerFailure, fetchUserRequest, fetchUserSuccess } from "store/actions/userActions";
+// import { fetchUSerFailure, fetchUserRequest, fetchUserSuccess } from "store/actions/userActions";
 
 const baseUrl = "https://thpimmo-back.herokuapp.com";
 
@@ -67,16 +67,8 @@ export const registerFetch = (username, email, password, passwordConfirmation) =
 
 
 // BELOW IS THE FUNCTION TO LOG IN
-export const loginFetch = (
-  email,
-  password
-) => {
-  const data = {
-    user: {
-      email,
-      password
-    },
-  };
+export const loginFetch = (userData) => {
+
   return (dispatch) => {
     let token;
     dispatch(fetchLoginRequest());
@@ -85,7 +77,7 @@ export const loginFetch = (
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(userData),
     })
       .then((response) => {
         if (response.headers.get("authorization")) {
@@ -104,6 +96,33 @@ export const loginFetch = (
       });
   };
 };
+
+// BELOW IS THE FUNCTION TO LOG IN WITH COOKIES
+export const loginUserWithCookie = async() =>{
+  const token = Cookies.get('token_cookie');
+  const id = Cookies.get('id_cookie');
+
+  const cookiesConfig = {
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+      // Authorization: `${token}`,
+    },
+  };
+
+  const response = await fetch(baseUrl + `/api/users/${id}`, cookiesConfig)
+  const cookieData = await response.json();
+  if (!cookieData.error) {
+    console.log("is true");
+    return true;
+  } else {
+    console.log("is false");
+    return false;
+  }
+
+};
+
 
 // BELOW IS THE FUNCTION TO LOG OUT
 export const logout = () => {

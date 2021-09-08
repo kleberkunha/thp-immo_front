@@ -2,8 +2,8 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux"
-import Cookies from 'js-cookie';
+import { useSelector } from "react-redux";
+import { loginUserWithCookie } from 'services/apiManager';
 
 // PAGES IMPORTS
 import Home from  'pages/Home/Home';
@@ -19,12 +19,14 @@ import Navbar from 'components/Navbar/Navbar';
 import Footer from 'components/Footer/footer';
 
 
+
+
 function App() {
 
-  const dispatch = useDispatch()
   const currentUser = useSelector((state) => state.users);
   const [isAuthTrue, setIsAuthTrue] = useState();
-  const [loading, setLoading] = useState(false);
+  // the loading will be used for private routes such as profile
+  // const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     checkAuth().then(res => {
@@ -33,52 +35,22 @@ function App() {
     })
   });
 
-  const getListings = () => {
-    dispatch(listingsFetch())
-  }
-
-  const loginUserWithCookie = async() =>{
-    const token = Cookies.get('token');
-    const id = Cookies.get('id');
-
-    const cookiesConfig = {
-      method: 'get',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
-        // Authorization: `${token}`,
-      },
-    };
-  
-    const response = await fetch(`http://localhost:3000/api/users/${id}`, cookiesConfig)
-    const cookieData = await response.json();
-    console.log(cookieData);
-    if (!cookieData.error) {
-      console.log("is true");
-      return true;
-    } else {
-      console.log("is false");
-      return false;
-    }
-
-  };
-
   const checkAuth = async() => {
-    const a = await (loginUserWithCookie());
-    if (currentUser || a === true) {
+    await (loginUserWithCookie());
+    if (loginUserWithCookie() === true) {
       return true;
     } else {
       return false;
     }
   }
 
-   {/* <Navbar auth={ isAuthTrue }/> */}
 
   return (
       <>
         <BrowserRouter>
          
           <Navbar />
+          <Navbar auth={ isAuthTrue }/>
           <Switch>
             <Route path="/" exact component={Home}/>
             <Route path="/register" exact component={Register} />
