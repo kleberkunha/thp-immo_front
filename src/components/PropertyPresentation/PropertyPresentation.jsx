@@ -29,11 +29,7 @@ const PropertyPresentation = ({description}) => {
           <div>
             <div>
               <p></p>
-              Excellent fully exclusive 4 bedroom villa (two suites),
-              three fronts and large garden, located in an urbanization of houses in Nogueira da Maia.
-              <br/>
-              Comprising basement, ground floor and floor, with exceptional areas and construction materials that make this house
-              an asset for those who appreciate privacy, comfort and well-being.
+              {description}
             </div>
           </div>
         </section>
