@@ -17,7 +17,7 @@ const Navbar = ({auth}) => {
   
   
   return (
-    <div className="navigation d-flex align-items-center p-2">
+    <div className="navigation">
       <div className="nav-left col-6">
         <NavLink exact to="/" activeClassName="nav-active">
           Accueil
@@ -42,18 +42,19 @@ const Navbar = ({auth}) => {
             </NavLink>
           </>
         )}
-        {auth && (<>
-          <NavLink exact to="/create-property" className="add-property">
-            <i className="fas fa-plus-circle"></i>Ajouter une annonce
-          </NavLink>
-          <button
-            onClick={() => handleLogOut()}
-            className="btn btn-danger mx-2"
-          >
-            {" "}
-            Log Out{" "}
-          </button>
-        </>
+        {auth && (
+          <>
+            <NavLink exact to="/create-property" className="add-property">
+              <i className="fas fa-plus-circle"></i>Ajouter une annonce
+            </NavLink>
+            <button
+              onClick={() => handleLogOut()}
+              className="btn btn-danger mx-2"
+            >
+              {" "}
+              Log Out{" "}
+            </button>
+          </>
         )}
       </div>
     </div>

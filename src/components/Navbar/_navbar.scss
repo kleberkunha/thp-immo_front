@@ -4,6 +4,11 @@
   background-color: $color-2;
   width: 100%;
   z-index: 10;
+  padding: 10px;
+  align-items: center;
+  @include phone {
+    display: none;
+  }
 
   a {
     margin: 10px;
@@ -26,7 +31,7 @@
 
   .add-property{
     font-size: 1.2rem;
-    margin-right: 100px;
+    margin: 0  50px 0 0;
     display: flex;
     align-items: center;
 
