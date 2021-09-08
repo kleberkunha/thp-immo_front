@@ -26,11 +26,7 @@ const Home = () => {
       <Jumbotron />
       <div className="container-fluid home-cards">
         {
-          listings.listings ?
-
-          <HousingList data={listings.listings} />
-          :
-          <Loading />
+          listings.listings ? <HousingList data={listings.listings} /> : <Loading /> 
         }
       </div>
     </div>

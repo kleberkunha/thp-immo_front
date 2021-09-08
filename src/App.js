@@ -13,6 +13,7 @@ import AdProfile from 'pages/Apartment/Apartment';
 import UserProfile from 'pages/UserProfile/UserProfile';
 import CreateProperty from 'pages/CreateProperty/CreateProperty';
 import Conditions from 'pages/Conditions/conditions';
+import Apartment from 'pages/Apartment/Apartment';
 
 // COMPONENTS IMPORTS
 import Navbar from 'components/Navbar/Navbar';
@@ -24,7 +25,7 @@ function App() {
   const currentUser = useSelector((state) => state.users);
   const [isAuthTrue, setIsAuthTrue] = useState();
   // the loading will be used for private routes such as profile
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     checkAuth().then(res => {
@@ -33,25 +34,25 @@ function App() {
     })
   });
 
+
   const checkAuth = async() => {
-    await (loginUserWithCookie());
-    if (loginUserWithCookie() === true) {
+    const a = await (loginUserWithCookie());
+    if (a === true) {
       return true;
     } else {
       return false;
     }
   }
 
+  // <Navbar auth={ isAuthTrue }/>
 
   return (
       <>
         <BrowserRouter>
-         
-          <Navbar />
           <Navbar auth={ isAuthTrue }/>
           <Switch>
             <Route path="/" exact component={Home}/>
-            {/* <Route path="/register" exact component={Register} />*/}
+            <Route path="/listing/:slug" exact component={Apartment}/>
             <Route path="/login" exact component={Login} /> 
             <Route path="/register" exact component={Register} />
             <Route path="/ApartmentsProfile" component={AdProfile} />
