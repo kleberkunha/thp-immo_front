@@ -12,6 +12,7 @@ import Register from 'pages/Register/Register';
 import AdProfile from 'pages/Apartment/Apartment';
 import UserProfile from 'pages/UserProfile/UserProfile';
 import CreateProperty from 'pages/CreateProperty/CreateProperty';
+import Apartment from 'pages/Apartment/Apartment';
 
 // COMPONENTS IMPORTS
 import Navbar from 'components/Navbar/Navbar';
@@ -47,11 +48,10 @@ function App() {
   return (
       <>
         <BrowserRouter>
-         
-          <Navbar />
           <Navbar auth={ isAuthTrue }/>
           <Switch>
             <Route path="/" exact component={Home}/>
+            <Route path="/listing/:slug" exact component={Apartment}/>
             {/* <Route path="/register" exact component={Register} />*/}
             <Route path="/login" exact component={Login} /> 
             <Route path="/register" exact component={Register} />

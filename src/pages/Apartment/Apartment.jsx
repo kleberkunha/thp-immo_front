@@ -6,8 +6,11 @@ import HousingList from 'components/HousingList/HousingList';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { listingsFetch } from 'services/apiManager';
+import { useParams } from 'react-router-dom';
 
 const ApartmentsProfile = () => {
+  const slug = useParams();
+  const id = slug.slug - 1;
 
   const dispatch = useDispatch()
   const listings = useSelector(state => state.listings)
@@ -16,10 +19,11 @@ const ApartmentsProfile = () => {
     dispatch(listingsFetch())
   }
 
-
   useEffect(() => {
     getListings();
   },[]);
+
+  const listing = listings.listings[id];
 
 
   let fourListings = [];
@@ -28,26 +32,30 @@ const ApartmentsProfile = () => {
 
   return (
     <>
+
+        {
+          listings.listings ? 
+
       <div className="mt-5">
         <div className="container infoAp-location-price border">
           <div className="row d-flex top-content-location-price-responsive">
             <div className="row title-plus-location d-block mt-3">
               <div className="col-sm title-responsive">
-                <h5>Luxurious house</h5>
+                <h5>{listing.title}</h5>
               </div>
               <div className="col-sm p-0">
                 <div className="main-location">
                   <div className="ico-location"></div>
-                  <p>Tavira (Santa Maria e Santiago), Tavira, Faro</p>
+                  <p>{listing.location}</p>
                 </div>
               </div>
             </div>
             <div className="row d-block top-pricing mt-3">
               <div className="col-sm total-price">
-                <h5>445 000 €</h5>
+                <h5>{listing.price} €/semaine</h5>
               </div>
               <div className="col-sm price-m2">
-                1 738 €/m²
+                {listing.category}
               </div>
             </div>
           </div>
@@ -58,7 +66,7 @@ const ApartmentsProfile = () => {
                   <Carousel.Item>
                     <img
                       className="d-block w-100"
-                      src="https://www.nortoncounty.net/wp-content/uploads/2021/05/im-234627.jpg"
+                      src={listing.photo}
                       alt="First slide"
                     />
                   </Carousel.Item>
@@ -90,18 +98,19 @@ const ApartmentsProfile = () => {
               <li className="item img-ap-5"></li>
             </ul>
           </div>
-          <PropertyPresentation />
+          <PropertyPresentation description={listing.description}/>
           <div className="container main-card-list-profileAp">
           {
-            listings.listings ?
-              <HousingList data={fourListings} />
-              :
-              <Loading />
+            listings.listings ? <HousingList data={fourListings} /> : <Loading />
           }
 
           </div>
         </div>
       </div>
+
+: <Loading /> 
+        }
+
     </>
   )
 }
