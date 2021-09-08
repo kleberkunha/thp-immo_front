@@ -22,38 +22,36 @@ import Footer from 'components/Footer/footer';
 
 function App() {
 
-  // const currentUser = useSelector((state) => state.users);
-  // const [isAuthTrue, setIsAuthTrue] = useState();
+  const currentUser = useSelector((state) => state.users);
+  const [isAuthTrue, setIsAuthTrue] = useState();
   // the loading will be used for private routes such as profile
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   checkAuth().then(res => {
-  //     setIsAuthTrue(res);
-  //     // setLoading(false);
-  //   })
-  // });
+  useEffect(() => {
+    checkAuth().then(res => {
+      setIsAuthTrue(res);
+      // setLoading(false);
+    })
+  });
 
-  // const checkAuth = async() => {
-  //   await (loginUserWithCookie());
-  //   if (loginUserWithCookie() === true) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
+
+  const checkAuth = async() => {
+    const a = await (loginUserWithCookie());
+    if (a === true) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   // <Navbar auth={ isAuthTrue }/>
 
   return (
       <>
         <BrowserRouter>
-         
-          <Navbar />
-          <Navbar />
+          <Navbar auth={ isAuthTrue }/>
           <Switch>
             <Route path="/" exact component={Home}/>
-            {/* <Route path="/register" exact component={Register} />*/}
             <Route path="/login" exact component={Login} /> 
             <Route path="/register" exact component={Register} />
             <Route path="/ApartmentsProfile" component={AdProfile} />

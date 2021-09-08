@@ -81,14 +81,12 @@ export const loginFetch = (userData) => {
       body: JSON.stringify(userData),
     })
       .then((response) => {
-        console.log(response.headers)
         if (response.headers.get("authorization")) {
         token = response.headers.get("authorization").split("Bearer ")[1];
         }
         return response.json();
       })
       .then((response) => {
-        console.log(response.headers)
         if (response.errors || response.error) {
           dispatch(fetchLoginFailure(response.errors));
         } else {
@@ -110,17 +108,14 @@ export const loginUserWithCookie = async() =>{
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
-      // Authorization: `${token}`,
     },
   };
 
-  const response = await fetch(baseUrl + `/api/users/${id}`, cookiesConfig)
+  const response = await fetch(baseUrl + `/api/v1/users/${id}`, cookiesConfig)
   const cookieData = await response.json();
   if (!cookieData.error) {
-    console.log("is true");
     return true;
   } else {
-    console.log("is false");
     return false;
   }
 
@@ -128,10 +123,8 @@ export const loginUserWithCookie = async() =>{
 
 
 // BELOW IS THE FUNCTION TO LOG OUT
-export const logout = () => {
+export const logoutUser = () => {
   return (dispatch) => {
-    Cookies.remove('token_cookie')
-    Cookies.remove("id_cookie");
     dispatch(fetchRegisterUnregister())
     dispatch(fetchLoginLogout())
   }

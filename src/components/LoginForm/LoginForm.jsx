@@ -20,7 +20,6 @@ const LoginForm = () => {
             password: password
         }
       }
-      console.log("hello");
       await dispatch(loginFetch(userData))
     }
 };
