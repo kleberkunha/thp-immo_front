@@ -25,9 +25,7 @@ const  UserProfile = () => {
                       <p>deydey@theEmail.com</p>
                   </div>
                   <ul className="nav nav-pills nav-stacked">
-                      <li className="active"><Link to="#"> <i className="fa fa-user"></i> Profile</Link></li>
-                      <li><Link to="#"> <i className="fa fa-calendar"></i> Recent Activity <span className="label label-warning pull-right r-activity">9</span></Link></li>
-                      <li><Link to="#"> <i className="fa fa-edit"></i> Edit profile</Link></li>
+                    <li><Link to="#"> <i className="fa fa-edit"></i> Edit profile</Link></li>
                   </ul>
                 </div>
               </div>
@@ -55,14 +53,18 @@ const  UserProfile = () => {
                   </div>
                 </div>
                 <h3 className="my-itens">My itens</h3>
-                <div className="container main-card-list-adm">
-                  {
-                    listings.listings ?
+                <div className="container main-content-cards-profile mt-5">
+                  <div className="row">
+                    <div class="col-sm-12">
+                      {
+                        listings.listings ?
 
-                      <HousingList data={listings.listings} />
-                      :
-                      <Loading />
-                  }
+                        <HousingList data={listings.listings} />
+                        :
+                        <Loading />
+                      }
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,10 +1,14 @@
 .homepage .main-card-list{
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  justify-content: center;
+  align-items: left;   
+  flex-wrap: wrap;
 }
 .home-cards{
   display: flex;
   justify-content: center;
+  align-items: left !important;
+  flex-wrap: wrap !important;
 }
 .home-cards .main-card-list{
   width: 1400px !important;
