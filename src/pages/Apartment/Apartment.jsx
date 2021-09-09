@@ -58,15 +58,13 @@ const ApartmentsProfile = () => {
           <div className="container p-0 mt-2 content-carousel-contact-responsive">
             <div className="row d-flex">
               <div className="col-12 carousel-box border">
-                <Carousel>
-                  <Carousel.Item>
+<div>
                     <img
                       className="d-block w-100 img-fluid"
                       src={listing.photo}
                       alt="First slide"
                     />
-                  </Carousel.Item>
-                </Carousel>
+                    </div>
               </div>
             </div>
           </div>
@@ -82,7 +80,6 @@ const ApartmentsProfile = () => {
           </div>
         </div>
       </div>
-
 : <Loading /> 
         }
 
