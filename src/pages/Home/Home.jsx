@@ -26,7 +26,7 @@ const Home = () => {
       <Jumbotron />
       <div className="container mt-5">
         <div className="row">
-          <div class="col-sm-12">
+          <div className="col-sm-12">
             {
               listings.listings ? <HousingList data={listings.listings} /> : <Loading /> 
             }

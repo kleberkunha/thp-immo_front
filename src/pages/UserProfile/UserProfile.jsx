@@ -1,13 +1,34 @@
 import { Link } from "react-router-dom";
-import ApartmentCard from "components/CardsApComponent/ApartmentCard";
 import './UserProfileResponsive/UserProfileResponsive.scss';
 import HousingList from 'components/HousingList/HousingList';
 import Loading from 'components/Loading/Loading';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { listingsFetch, locationsFetch, categoriesFetch, usersFetch } from 'services/apiManager';
+import { useParams } from 'react-router-dom';
 
 const  UserProfile = () => {
 
+  const slug = useParams();
+  const user_id = slug.slug - 1;
+
+  const dispatch = useDispatch()
   const listings = useSelector(state => state.listings)
+  const users = useSelector(state => state.users)
+
+
+  const getListings = () => {
+    dispatch(listingsFetch())
+  }
+
+  const getUsers = () => {
+    dispatch(usersFetch())
+  }
+
+  useEffect(() => {
+    getListings();
+    getUsers();
+  },[]);
 
   return (
     <>
@@ -55,7 +76,7 @@ const  UserProfile = () => {
                 <h3 className="my-itens">My itens</h3>
                 <div className="container main-content-cards-profile mt-5">
                   <div className="row">
-                    <div class="col-sm-12">
+                    <div className="col-sm-12">
                       {
                         listings.listings ?
 
