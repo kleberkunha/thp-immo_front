@@ -6,14 +6,14 @@ import { logoutUser } from 'services/apiManager';
 
 const HamburgerMenu = ({ auth }) => {
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    const handleLogOut = () => {
-      Cookies.remove("token_cookie");
-      Cookies.remove("id_cookie");
-      dispatch(logoutUser);
-      window.location.reload();
-    };
+  const handleLogOut = () => {
+    Cookies.remove("token_cookie");
+    Cookies.remove("id_cookie");
+    dispatch(logoutUser);
+    window.location.reload();
+  };
   
   const handleMenu = () => {
     document.querySelector('.span1').classList.toggle("clicked");
@@ -35,6 +35,7 @@ const HamburgerMenu = ({ auth }) => {
           to="/"
           className="menu-link"
           activeClassName="nav-active"
+          onClick={handleMenu}
         >
           Accueil
         </NavLink>
@@ -43,6 +44,7 @@ const HamburgerMenu = ({ auth }) => {
           to="/listing"
           className="menu-link"
           activeClassName="nav-active"
+          onClick={handleMenu}
         >
           One appartment
         </NavLink>
@@ -52,27 +54,46 @@ const HamburgerMenu = ({ auth }) => {
             to="/profile"
             className="menu-link"
             activeClassName="nav-active"
+            onClick={handleMenu}
           >
             Profile
           </NavLink>
         )}
         {!auth && (
           <>
-            <NavLink exact to="/register" className="menu-link">
+            <NavLink
+              exact
+              to="/register"
+              className="menu-link"
+              onClick={handleMenu}
+            >
               Sign Up
             </NavLink>
-            <NavLink exact to="/login" className="menu-link">
+            <NavLink
+              exact
+              to="/login"
+              className="menu-link"
+              onClick={handleMenu}
+            >
               Log In
             </NavLink>
           </>
         )}
         {auth && (
           <>
-            <NavLink exact to="/create-property" className="menu-link">
+            <NavLink
+              exact
+              to="/create-property"
+              className="menu-link"
+              onClick={handleMenu}
+            >
               <i className="fas fa-plus-circle"></i>Ajouter une annonce
             </NavLink>
             <button
-              onClick={() => handleLogOut()}
+              onClick={() => {
+                handleMenu()
+                handleLogOut()
+              }}
               className="btn btn-danger mx-2"
             >
               {" "}
