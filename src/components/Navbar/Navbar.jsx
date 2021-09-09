@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { logoutUser } from "services/apiManager";
 import Cookies from 'js-cookie';
+import logo from "../../assets/images/Artboard_1_copy.png";
 
 const Navbar = ({auth}) => {
   
@@ -19,6 +20,7 @@ const Navbar = ({auth}) => {
   return (
     <div className="navigation">
       <div className="nav-left col-6">
+        <img src={logo} alt="logo" className='logo'></img>
         <NavLink exact to="/" activeClassName="nav-active">
           Accueil
         </NavLink>
