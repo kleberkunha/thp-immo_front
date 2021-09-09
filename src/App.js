@@ -31,17 +31,17 @@ function App() {
   // the loading will be used for private routes such as profile
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    checkAuth().then(res => {
-      setIsAuthTrue(res);
-      setLoading(true);
-    })
-  });
+  // useEffect(() => {
+  //   checkAuth().then(res => {
+  //     setIsAuthTrue(res);
+  //     setLoading(true);
+  //   })
+  // });
 
 
-  const checkAuth = async() => {
-    return await (loginUserWithCookie());
-  }
+  // const checkAuth = async() => {
+  //   return await (loginUserWithCookie());
+  // }
 
   const PrivateRoute = ({ component: Component, ...rest }) => (
     <>
@@ -52,21 +52,21 @@ function App() {
         )
       }
     </>
-);
+  );
 
-const isAuth = () => {
-  return (
-    login === '' &&
-    Cookies.get('cookie_token') === undefined ? false : true)
-};
+  const isAuth = () => {
+    return (
+      login === '' &&
+        Cookies.get('token_cookie') === undefined ? false : true)
+  };
 
   // <Route path="/profile" component={UserProfile} />
 
   return (
       <>
       <BrowserRouter>
-          <HamburgerMenu auth={isAuthTrue}/>
-          <Navbar auth={ isAuthTrue }/>
+          <HamburgerMenu auth={isAuth()}/>
+          <Navbar auth={ isAuth() }/>
           <Switch>
             <Route path="/" exact component={Home}/>
             <Route path="/login">

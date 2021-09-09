@@ -12,7 +12,7 @@ const Navbar = ({auth}) => {
   const handleLogOut = () => {
     Cookies.remove('token_cookie')
     Cookies.remove("id_cookie");
-    dispatch(logoutUser);
+    dispatch(logoutUser());
     window.location.reload();
   }
   
