@@ -11,7 +11,7 @@ import { fetchLocationsSuccess } from "store/actions/locationsActions";
 import { fetchLocationsRequest } from "store/actions/locationsActions";
 import { fetchLoginFailure, fetchLoginLogout, fetchLoginRequest, fetchLoginSuccess } from "store/actions/userActions";
 import { fetchRegisterFailure, fetchRegisterRequest, fetchRegisterSuccess, fetchRegisterUnregister } from "store/actions/userActions";
-// import { fetchUSerFailure, fetchUserRequest, fetchUserSuccess } from "store/actions/userActions";
+import { fetchUsersFailure, fetchUsersRequest, fetchUsersSuccess } from "store/actions/userActions";
 const baseUrl = "https://thpimmo-back.herokuapp.com";
 
 
@@ -75,7 +75,6 @@ export const registerFetch = (username, email, password, passwordConfirmation) =
 
 
 // BELOW IS THE FUNCTION TO LOG IN
-
 export const loginFetch = (userData) => {
 
   return (dispatch) => {
@@ -177,6 +176,27 @@ export const locationsFetch = () => {
           dispatch(fetchLocationsFailure(response.errors));
         } else {
           dispatch(fetchLocationsSuccess(response));
+        }
+      });
+  };
+};
+
+// BELOW IS THE FUNCTION TO FETCH ALL USERS
+export const usersFetch = () => {
+  return (dispatch) => {
+    dispatch(fetchUsersRequest());
+    fetch(baseUrl + "/api/v1/users", {
+      method: "get",
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        if (response.errors) {
+          dispatch(fetchUsersFailure(response.errors));
+        } else {
+          dispatch(fetchUsersSuccess(response));
         }
       });
   };
