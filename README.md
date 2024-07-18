@@ -1,5 +1,5 @@
 # Property Search
-## In this application you can Registrate, login, sell a apartment, house etc..
+## In this application you can Register, login, sell a apartment, house etc..
 ![Home](https://user-images.githubusercontent.com/29848785/133381657-b0d6a3c5-80c0-4ab1-839a-212e6864d92b.png)
 ![HomeLogged](https://user-images.githubusercontent.com/29848785/133381663-c8c547a4-11c9-41c7-a5ee-b59d7604ba6a.png)
 ![cards](https://user-images.githubusercontent.com/29848785/133381685-a7f372ed-2e20-4c15-b122-c289fe0c9f4c.png)
